@@ -16,3 +16,11 @@
     - name: task to print pre-defined ansible variables
       ansible.builtin.debug:
         msg: "{{ ansible_distribution }}"
+
+    - name: task to register the output of module
+      ansible.builtin.shell: uptime
+      register: status
+
+    - name: printing status
+      ansible.builtin.debug:
+        msg: "{{ status }}"
