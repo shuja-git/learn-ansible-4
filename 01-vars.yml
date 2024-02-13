@@ -1,10 +1,12 @@
 - name: play level variable
   hosts: all
-  vars:
-    URL: play.example.com
-  vars_files:
-    - var.yml
   tasks:
-    - name: task to print variable from file
+    - name: task to print taks level variable
+      vars:
+        URL: task.example.com
+      ansible.builtin.debug:
+        msg: URL = {{ URL }}
+
+    - name: task to print variable from inventory file
       ansible.builtin.debug:
         msg: URL = {{ URL }}
