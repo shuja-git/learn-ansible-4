@@ -7,6 +7,8 @@
       ansible.builtin.debug:
         msg: URL = {{ URL }}
 
-    - name: task to print variable from inventory file
+    - name: task to print variable from this task
+      vars:
+        URL: task2.example.com
       ansible.builtin.debug:
         msg: URL = {{ URL }}
