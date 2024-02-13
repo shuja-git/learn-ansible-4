@@ -12,3 +12,7 @@
         URL: task2.example.com
       ansible.builtin.debug:
         msg: URL = {{ URL }}
+
+    - name: task to print pre-defined ansible variables
+      ansible.builtin.debug:
+        msg: "{{ ansible_distribution }}"
