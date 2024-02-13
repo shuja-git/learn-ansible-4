@@ -19,7 +19,15 @@
 
     - name: task to register the output of module
       ansible.builtin.shell: uptime
-      register: status
+      register: out
+
+    - name: printing output
+      ansible.builtin.debug:
+        msg: "{{ out }}"
+
+    - name: printing the output from status output
+      ansible.builtin.set_fact:
+        status: "{{ out.rc }}"
 
     - name: printing status
       ansible.builtin.debug:
