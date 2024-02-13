@@ -1,0 +1,4 @@
+-  name: Play for roles
+   hosts: all
+   roles:
+     - demo
